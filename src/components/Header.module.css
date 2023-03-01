@@ -30,3 +30,8 @@ nav > div {
   text-decoration: none;
   color: #fff;
 }
+
+.bus {
+  stroke: #fff;
+  margin-bottom: 3rem;
+}

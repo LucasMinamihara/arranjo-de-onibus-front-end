@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  gap: 2rem;
+}
+
+.entrada {
+  padding: 2rem;
+  border: none;
+  outline: none;
+  transition: all 2s;
+  width: 80%;
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+.entrada:hover,
+.entrada:active {
+  border-bottom: 1px solid black;
+}
+
+.botao {
+  width: 80%;
+  margin: auto;
+  padding: 2rem;
+  border: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.8);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.botao:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 1);
+}
