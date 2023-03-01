@@ -1,0 +1,32 @@
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #fff;
+}
+nav > div {
+  margin-top: 1.6rem;
+  background-color: black;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 10rem;
+}
+
+.flex > li {
+  list-style-type: none;
+}
+
+.flex > li > a {
+  text-decoration: none;
+  color: #fff;
+}
