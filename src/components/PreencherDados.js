@@ -7,23 +7,7 @@ function PreencherDados() {
   const [quantidadeDePessoas, setQuantidadeDePessoas] = useState(0);
   const [quantidadeDeEntradas, setQuantidadeDeEntradas] = useState([]);
 
-  function ativarEntradas() {
-    setComprarPassagens(true);
-    console.log(quantidadeDePessoas);
-  }
-
-  function enviandoEntradas() {
-    for (let i = 1; i < quantidadeDePessoas; i++) {
-      setQuantidadeDeEntradas(
-        ...quantidadeDeEntradas,
-        <>
-          <input placeholder={`Qual o nome do ${i} ° passageiro`}></input>
-          <input placeholder={`Qual o email do ${i} ° passageiro`}></input>
-        </>
-      );
-    }
-    return quantidadeDeEntradas;
-  }
+  function ativarEntradas() {}
 
   return (
     <form>
@@ -42,7 +26,6 @@ function PreencherDados() {
             </button>
           </>
         )}
-        {comprarPassagens && enviandoEntradas()}
       </div>
     </form>
   );

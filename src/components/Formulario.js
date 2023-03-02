@@ -24,7 +24,7 @@ function Formulario() {
           Comprar Passagem de Ônibus
         </button>
       )}
-      {formulario && <PreencherDados></PreencherDados>}
+      {formulario && <PreencherDados />}
     </div>
   );
 }

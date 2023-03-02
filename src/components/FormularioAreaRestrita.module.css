@@ -1,0 +1,36 @@
+.estilo {
+  color: #000;
+  text-align: center;
+}
+
+.fechar {
+  font-size: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
+  cursor: pointer;
+  color: #000;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+}
+
+.entrada {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.botao {
+  padding: 0.8rem;
+  margin-top: 1rem;
+}
+
+.botaoRegistrar {
+  border: none;
+  background-color: grey;
+}

@@ -27,3 +27,13 @@ div > h3 {
   right: 3rem;
   cursor: pointer;
 }
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #64748b;
+  filter: blur(1.5px);
+  left: 0;
+  top: 0;
+}

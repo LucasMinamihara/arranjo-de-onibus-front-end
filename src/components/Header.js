@@ -1,26 +1,30 @@
-import { useState } from "react";
 import classes from "./Header.module.css";
 import Responsáveis from "./Responsaveis";
 import Informacoes from "./Informacoes";
+import AreaRestrita from "./AreaRestrita";
 
-function Header() {
-  const [responsaveis, setResponsaveis] = useState(false);
-  const [informacoes, setInformacoes] = useState(false);
-  const [areaRestrita, setAreaRestrita] = useState(false);
+function Header(props) {
+  function fecharRestos(fecharPrimeiro, fecharSegundo) {
+    fecharPrimeiro(false);
+    fecharSegundo(false);
+  }
 
   function abrirResponsaveis(e) {
     e.preventDefault();
-    setResponsaveis(true);
+    props.setResponsaveis(true);
+    fecharRestos(props.setInformacoes, props.setAreaRestrita);
   }
 
   function abrirInformacoes(e) {
     e.preventDefault();
-    setInformacoes(true);
+    props.setInformacoes(true);
+    fecharRestos(props.setResponsaveis, props.setAreaRestrita);
   }
 
   function abrirAreaRestrita(e) {
     e.preventDefault();
-    setAreaRestrita(true);
+    props.setAreaRestrita(true);
+    fecharRestos(props.setResponsaveis, props.setInformacoes);
   }
 
   return (
@@ -42,23 +46,29 @@ function Header() {
             <a href="#" onClick={abrirResponsaveis}>
               Responsáveis
             </a>
-            {responsaveis && (
-              <Responsáveis setResponsaveis={setResponsaveis}></Responsáveis>
+            {props.responsaveis && (
+              <Responsáveis
+                setResponsaveis={props.setResponsaveis}
+              ></Responsáveis>
             )}
           </li>
           <li>
             <a href="#" onClick={abrirInformacoes}>
               Informações
             </a>
-            {informacoes && (
-              <Informacoes setInformacoes={setInformacoes}></Informacoes>
+            {props.informacoes && (
+              <Informacoes setInformacoes={props.setInformacoes}></Informacoes>
             )}
           </li>
           <li>
             <a href="#" onClick={abrirAreaRestrita}>
               Área Restrita
             </a>
-            {areaRestrita && <></>}
+            {props.areaRestrita && (
+              <AreaRestrita
+                setAreaRestrita={props.setAreaRestrita}
+              ></AreaRestrita>
+            )}
           </li>
         </ul>
       </nav>

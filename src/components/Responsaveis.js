@@ -6,7 +6,8 @@ function Responsáveis(props) {
   }
 
   return (
-    <div className={classes.fundo}>
+    <>
+      <div className={classes.overlay} onClick={fecharModal}></div>
       <div className={classes.modal}>
         <span className={classes.fechar} onClick={fecharModal}>
           X
@@ -36,7 +37,7 @@ function Responsáveis(props) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
