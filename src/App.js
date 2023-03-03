@@ -22,7 +22,7 @@ function App() {
       ></Header>
 
       {responsaveis || informacoes || areaRestrita ? (
-        console.log("nothing")
+        console.log("nothing!")
       ) : (
         <Formulario />
       )}

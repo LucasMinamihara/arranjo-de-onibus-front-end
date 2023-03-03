@@ -6,7 +6,8 @@ function Formulario() {
   const [botao, setBotao] = useState(true);
   const [formulario, setFormulario] = useState(false);
 
-  function abrirFormulario() {
+  function abrirFormulario(e) {
+    e.preventDefault();
     setBotao(false);
     setFormulario(true);
   }
