@@ -9,13 +9,15 @@ body {
   font-size: 1.6rem;
   color: #fff;
 }
+
 nav > div {
   margin-top: 1.6rem;
-  background-color: black;
+  background-color: #8c9bae;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
 }
+
 .flex {
   display: flex;
   justify-content: space-between;
@@ -24,6 +26,17 @@ nav > div {
 
 .flex > li {
   list-style-type: none;
+  background-color: #4c1d95;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 10rem;
+
+  transition: all;
+  transition-duration: 0.4s;
+}
+
+.flex > li:hover {
+  background-color: #8b5cf6;
 }
 
 .flex > li > a {
@@ -32,7 +45,7 @@ nav > div {
 }
 
 .bus {
-  stroke: #fff;
+  stroke: #df6714;
   margin-bottom: 3rem;
   width: 3rem;
   height: 3rem;

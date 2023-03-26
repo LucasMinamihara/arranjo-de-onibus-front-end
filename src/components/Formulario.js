@@ -15,16 +15,19 @@ function Formulario() {
   return (
     <div className={classes.container}>
       {botao && (
-        <p className={classes.textoContainer}>
-          Para efetuar o pagamento da sua passagem de ônibus, basta clicar no
-          botão abaixo
-        </p>
+        <>
+          <p className={classes.textoContainer}>Selecione uma opção</p>
+          <button className={classes.botao} onClick={abrirFormulario}>
+            Comprar Passagem de Ônibus
+          </button>
+          <button className={classes.botao}>Como funciona o pagamento</button>
+          <button className={classes.botao}>Informações da empresa</button>
+          <button className={classes.botao}>
+            Visualizar lista de pagamento
+          </button>
+        </>
       )}
-      {botao && (
-        <button className={classes.botao} onClick={abrirFormulario}>
-          Comprar Passagem de Ônibus
-        </button>
-      )}
+
       {formulario && <PreencherDados />}
     </div>
   );
