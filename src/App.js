@@ -14,7 +14,6 @@ function App() {
 
   return (
     <>
-    <div className="background-image-blur"></div>
       <div className="App">
         <Header
           responsaveis={responsaveis}

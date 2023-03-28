@@ -6,6 +6,15 @@ function PreencherDados() {
   const [comprarPassagens, setComprarPassagens] = useState(false);
   const [quantidadeDePessoas, setQuantidadeDePessoas] = useState("Digite");
   const [valorUltrapassado, setValorUltrapassado] = useState(false);
+  const [armazenandoEntradas, setArmazenandoEntrada] = useState([]);
+
+  function armazenandoEntrada(e) {
+    e.preventDefault();
+
+    console.log("dados enviados com sucesso!");
+  }
+
+  function enviandoDados() {}
 
   function ativarEntradas(evento) {
     let quantidadeMaximaUltrapassada = quantidadeDePessoas > 6;
@@ -27,7 +36,7 @@ function PreencherDados() {
   }
 
   return (
-    <form>
+    <form onSubmit={enviandoDados}>
       <div className={classes.container}>
         {!comprarPassagens && (
           <>
@@ -53,22 +62,26 @@ function PreencherDados() {
             </button>
           </>
         )}
+
         {comprarPassagens &&
           Array.from(
             { length: quantidadeDePessoas },
             (_, index) => index + 1
-          ).map((posicaoEntrada) => (
-            <div className={classes.flex}>
-              <span className={classes.nomeDoPassageiro}>
+          ).map((posicaoEntrada, index) => (
+            <div className={classes.flex} key={index}>
+              <span className={classes.numeroDoPassageiro}>
                 {posicaoEntrada}°
               </span>
               <input placeholder={"Nome"}></input>
-              <span className={classes.emailDoPassageiro}>
+              <span className={classes.numeroDoPassageiro}>
                 {posicaoEntrada}°
               </span>
               <input placeholder={"E-mail"}></input>
             </div>
           ))}
+        <button type="submit">
+          Clique aqui para ver se os valores foram armazenados corretamente!
+        </button>
       </div>
     </form>
   );

@@ -12,10 +12,11 @@ body {
 
 nav > div {
   margin-top: 1.6rem;
-  background-color: #8c9bae;
+  background-color: #fb7185;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  user-select: none;
 }
 
 .flex {

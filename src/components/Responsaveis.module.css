@@ -32,7 +32,7 @@ div > h3 {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: #64748b;
+  background: linear-gradient(to right, #4338ca #818cf8);
   left: 0;
   top: 0;
 }

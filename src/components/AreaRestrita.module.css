@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #64748b;
+  background: linear-gradient(to right, #4338ca #818cf8);
 }
 
 .container {

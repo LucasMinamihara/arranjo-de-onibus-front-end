@@ -86,7 +86,6 @@
   outline: none;
 }
 
-.nomeDoPassageiro,
-.emailDoPassageiro {
+.numeroDoPassageiro {
   font-size: 1rem;
 }
