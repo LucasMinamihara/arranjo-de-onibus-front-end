@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CriandoEntradas from "./CriandoEntradas";
 
 import classes from "./PreencherDados.module.css";
 
@@ -6,15 +7,20 @@ function PreencherDados() {
   const [comprarPassagens, setComprarPassagens] = useState(false);
   const [quantidadeDePessoas, setQuantidadeDePessoas] = useState("Digite");
   const [valorUltrapassado, setValorUltrapassado] = useState(false);
-  const [armazenandoEntradas, setArmazenandoEntrada] = useState([]);
 
-  function armazenandoEntrada(e) {
-    e.preventDefault();
+  function enviandoDados(evento) {
+    evento.preventDefault();
 
-    console.log("dados enviados com sucesso!");
+    const formData = new FormData(evento.target);
+    const data = Object.fromEntries(formData);
+
+    for (let index = 0; index < quantidadeDePessoas; index++) {
+      let nome = data[`nome-${index}`];
+      let email = data[`email-${index}`];
+    }
+    console.log(formData);
+    console.log(data);
   }
-
-  function enviandoDados() {}
 
   function ativarEntradas(evento) {
     let quantidadeMaximaUltrapassada = quantidadeDePessoas > 6;
@@ -23,6 +29,7 @@ function PreencherDados() {
 
     if (quantidadeMaximaUltrapassada) {
       setValorUltrapassado(true);
+
       return;
     }
 
@@ -63,25 +70,12 @@ function PreencherDados() {
           </>
         )}
 
-        {comprarPassagens &&
-          Array.from(
-            { length: quantidadeDePessoas },
-            (_, index) => index + 1
-          ).map((posicaoEntrada, index) => (
-            <div className={classes.flex} key={index}>
-              <span className={classes.numeroDoPassageiro}>
-                {posicaoEntrada}°
-              </span>
-              <input placeholder={"Nome"}></input>
-              <span className={classes.numeroDoPassageiro}>
-                {posicaoEntrada}°
-              </span>
-              <input placeholder={"E-mail"}></input>
-            </div>
-          ))}
-        <button type="submit">
-          Clique aqui para ver se os valores foram armazenados corretamente!
-        </button>
+        {comprarPassagens && (
+          <>
+            <CriandoEntradas quantidadeDePessoas={quantidadeDePessoas} />
+            <button type="submit">Efetuar pagamento das passagens!</button>
+          </>
+        )}
       </div>
     </form>
   );
