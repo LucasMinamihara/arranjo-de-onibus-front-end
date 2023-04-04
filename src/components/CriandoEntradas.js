@@ -10,12 +10,12 @@ function CriandoEntradas(props) {
       <input
         placeholder={"Nome"}
         id={`nome_${index}`}
-        name={`name_${index}`}
+        name={`nome_${index}`}
       ></input>
       <span className={classes.numeroDoPassageiro}>{posicaoEntrada}°</span>
       <input
         placeholder={"E-mail"}
-        id={`nome_${index}`}
+        id={`email_${index}`}
         name={`email_${index}`}
       ></input>
     </div>

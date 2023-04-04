@@ -1,4 +1,5 @@
 import { useState } from "react";
+import verificandoEmail from "./Apis/conferindoEmailValido";
 import CriandoEntradas from "./CriandoEntradas";
 
 import classes from "./PreencherDados.module.css";
@@ -7,6 +8,7 @@ function PreencherDados() {
   const [comprarPassagens, setComprarPassagens] = useState(false);
   const [quantidadeDePessoas, setQuantidadeDePessoas] = useState("Digite");
   const [valorUltrapassado, setValorUltrapassado] = useState(false);
+  const [dadosFaltando, setDadosFaltando] = useState(false);
 
   function enviandoDados(evento) {
     evento.preventDefault();
@@ -14,12 +16,22 @@ function PreencherDados() {
     const formData = new FormData(evento.target);
     const data = Object.fromEntries(formData);
 
-    for (let index = 0; index < quantidadeDePessoas; index++) {
-      let nome = data[`nome-${index}`];
-      let email = data[`email-${index}`];
+    for (let i = 0; i < quantidadeDePessoas; i++) {
+      let nome = data[`nome_${i}`];
+      console.log(nome);
+
+      let email = data[`email_${i}`];
+      console.log(email);
+
+      let faltandoDados = !nome && !data;
+
+      if (!faltandoDados) {
+        setDadosFaltando(true);
+        return;
+      }
+
+      verificandoEmail();
     }
-    console.log(formData);
-    console.log(data);
   }
 
   function ativarEntradas(evento) {
@@ -73,6 +85,9 @@ function PreencherDados() {
         {comprarPassagens && (
           <>
             <CriandoEntradas quantidadeDePessoas={quantidadeDePessoas} />
+            {dadosFaltando && (
+              <p className={classes.dadosPendentes}>Dados Pendentes!</p>
+            )}
             <button type="submit">Efetuar pagamento das passagens!</button>
           </>
         )}
